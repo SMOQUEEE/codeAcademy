@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Python Exercises</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{% static 'cours/styles.css' %}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="{% static 'cours/script.js' %}"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <a href="#" class="logo">🐍 Python Exercises</a>
+        <div class="nav-links">
+          <a href="#" class="active">Exercises</a>
+          <a href="#">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1 data-aos="fade-up">Master Python Programming</h1>
+      <p data-aos="fade-up" data-aos-delay="200">A collection of interactive exercises to improve your Python skills</p>
+    </header>
+
+    <main>
+      <div class="exercises-grid">
+        <!-- Exercise 1 -->
+        <div class="exercise-card" data-aos="fade-up">
+          <div class="exercise-icon">📊</div>
+          <h2>Grade Analyzer</h2>
+          <div class="exercise-content">
+            <p>Ask the user how many students are in the class. Then collect each student's grade and display the highest grade, lowest grade, and class average.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>How many students? 4
+Enter grade for student 1: 12
+Enter grade for student 2: 15
+Enter grade for student 3: 8
+Enter grade for student 4: 10
+
+Highest grade: 15
+Lowest grade: 8
+Class average: 11.25</pre>
+            </div>
+            <p class="hint">💡 Use a list to store grades, and use max(), min(), and sum().</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>grades = []
+for i in range(num_students):
+    grade = float(input(f"Enter grade for student {i+1}: "))
+    grades.append(grade)
+
+print(f"Highest grade: {max(grades)}")
+print(f"Lowest grade: {min(grades)}")
+print(f"Class average: {sum(grades)/len(grades)}")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Lists</span>
+            <span class="tag">Statistics</span>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="exercise-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="exercise-icon">🔢</div>
+          <h2>Even or Odd Counter</h2>
+          <div class="exercise-content">
+            <p>Ask the user to enter numbers one by one. When they type "stop", display how many were even and how many were odd.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter a number (or 'stop'): 3
+Enter a number (or 'stop'): 12
+Enter a number (or 'stop'): 7
+Enter a number (or 'stop'): stop
+
+Even numbers: 1
+Odd numbers: 2</pre>
+            </div>
+            <p class="hint">💡 Use while and check each number with %.</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>even_count = 0
+odd_count = 0
+
+while True:
+    num = input("Enter a number (or 'stop'): ")
+    if num == 'stop':
+        break
+    
+    if int(num) % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+
+print(f"\nEven numbers: {even_count}")
+print(f"Odd numbers: {odd_count}")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Loops</span>
+            <span class="tag">Conditionals</span>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="exercise-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="exercise-icon">🔤</div>
+          <h2>Count the Vowels</h2>
+          <div class="exercise-content">
+            <p>Ask the user to input a sentence and count how many vowels it contains.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter a sentence: I love Python!
+Number of vowels: 4</pre>
+            </div>
+            <p class="hint">💡 Use a loop and .lower() to check for vowels.</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>sentence = input("Enter a sentence: ")
+vowels = 'aeiou'
+count = sum(1 for char in sentence.lower() if char in vowels)
+print(f"Number of vowels: {count}")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Strings</span>
+            <span class="tag">Loops</span>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="exercise-card" data-aos="fade-up">
+          <div class="exercise-icon">✖️</div>
+          <h2>Multiply Table Generator</h2>
+          <div class="exercise-content">
+            <p>Ask the user to enter a number and print the multiplication table from 1 to 10.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter a number: 4
+4 x 1 = 4
+4 x 2 = 8
+...
+4 x 10 = 40</pre>
+            </div>
+            <p class="hint">💡 Use a loop and f-strings for formatting.</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>number = int(input("Enter a number: "))
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Loops</span>
+            <span class="tag">Formatting</span>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="exercise-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="exercise-icon">🔄</div>
+          <h2>Reverse Words</h2>
+          <div class="exercise-content">
+            <p>Ask the user to enter a sentence and display it with the words in reverse order.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter a sentence: Python is fun
+Reversed: fun is Python</pre>
+            </div>
+            <p class="hint">💡 Use .split(), [::-1], and " ".join().</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>sentence = input("Enter a sentence: ")
+words = sentence.split()
+reversed_sentence = " ".join(words[::-1])
+print(f"Reversed: {reversed_sentence}")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Strings</span>
+            <span class="tag">Lists</span>
+          </div>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="exercise-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="exercise-icon">🔒</div>
+          <h2>Password Validator</h2>
+          <div class="exercise-content">
+            <p>Check if a password has at least 6 characters, one digit, and one uppercase letter.</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter password: Hello1
+✅ Password is valid!
+
+Enter password: hello
+❌ Password is invalid.</pre>
+            </div>
+            <p class="hint">💡 Use any(), isdigit(), and isupper().</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>password = input("Enter password: ")
+is_valid = (
+    len(password) >= 6 and
+    any(c.isdigit() for c in password) and
+    any(c.isupper() for c in password)
+)
+print("✅ Password is valid!" if is_valid else "❌ Password is invalid.")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Strings</span>
+            <span class="tag">Validation</span>
+          </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="exercise-card" data-aos="fade-up">
+          <div class="exercise-icon">🔍</div>
+          <h2>First and Last Letter Game</h2>
+          <div class="exercise-content">
+            <p>Ask for a word and check if its first and last letters are the same (case-insensitive).</p>
+            <div class="example">
+              <p>Example:</p>
+              <pre>Enter a word: radar
+Match!
+
+Enter a word: Python
+No match!</pre>
+            </div>
+            <p class="hint">💡 Compare word[0].lower() and word[-1].lower().</p>
+            <button class="show-solution">Show Solution</button>
+            <div class="code-preview hidden">
+              <pre><code>word = input("Enter a word: ")
+if word[0].lower() == word[-1].lower():
+    print("Match!")
+else:
+    print("No match!")</code></pre>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">Strings</span>
+            <span class="tag">Comparison</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Created with 💖 for Python learners</p>
+    </footer>
+  </body>
+</html>
