@@ -78,7 +78,6 @@ WSGI_APPLICATION = 'codeAcademy.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 if 'RENDER' in os.environ:
     DATABASES = {
         'default': {
@@ -97,6 +96,8 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+
 
 
 # Password validation
