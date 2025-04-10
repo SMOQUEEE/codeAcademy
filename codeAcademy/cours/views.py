@@ -17,6 +17,6 @@ def home(request):
     
     return render(request, 'cours/home.html')
 
-@login_required(login_url='home')
+
 def index(request):
     return render(request, 'cours/index.html')
